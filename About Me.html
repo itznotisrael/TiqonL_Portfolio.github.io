@@ -13,22 +13,28 @@
     <body>
 
       <!-- Background Video -->
-      <video autoplay muted loop id="bg-video4">
+    <div class="video-overlay"></div>
+      <video autoplay muted loop playsinline preload="metadata" id="bg-video4">
         <source src="Video/forest.mp4" type="video/mp4">
         Your browser does not support HTML5 video.
       </video>
+    </div>
 
       <!-- Foreground Content -->
-      <div class="content">
+      <div class="content1">
+        <header class="about-title-wrapper fade-in">
+          <h1 class="about-title">About Me</h1>
+        </header>
 
-        <div class="w3-padding-large w3-xlarge">
-          <p class="w3-display-topright">
-            <a href="TJ_Portfolio.html" class = "three image-button seventeen">HOMEPAGE</a>
-            <a href="Resume.html" class = "three image-button_two fifteen">RESUME</a>
-            <a href="Contact Info.html" class = "three image-button_three sixteen">CONTACT INFO</a>
-          </p>
-        </div>
-          <img src="Portfolio Photo/About Me.png" class = "four fade-in">
+        <!-- NAV -->
+        <nav class="nav-links content">
+          <a href="TJ_Portfolio.html" class = "three image-button seventeen">Homepage</a>
+          <a href="Resume.html" class = "three image-button_two fifteen">Resume</a>
+          <a href="Contact Info.html" class = "three image-button_three sixteen">Contact Info</a>
+        </nav>
+        <!-- FLEX CONTAINER -->
+        <section class="contact-flex">
+          
             <div class="frosted-paragraph1 six">
               <p class = "five fade-in1">
                 Hi, I’m Tiqon Lediard Jr.—a 23-year-old Emerging Media major at
@@ -38,6 +44,7 @@
                 and contribute to creative, user-friendly web experiences.
               </p>
             </div>
+        </section>
       </div>
 
     </body>
