@@ -12,30 +12,40 @@ html, body {
   background: #000;
   overflow-x: hidden;
   font-family: "Raleway", sans-serif;
+  overscroll-behavior: none;
 }
 
 /* ===============================
    SMOOTH SCROLL
 ================================ */
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-x: hidden;
+}
+
 #smooth-wrapper {
-  position: fixed;
-  inset: 0;
   overflow: hidden;
-  touch-action: pan-y;
 }
 
 #smooth-content {
   will-change: transform;
+  min-height: 100vh;
 }
 
 /* ===============================
    SECTIONS
 ================================ */
 .panel {
-  height: 100vh;
+  min-height: 100vh;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
+  position: relative;
 }
 
 .section-inner {
@@ -50,18 +60,22 @@ html, body {
 .bg-home {
     background: linear-gradient(120deg, #51cbff, #1c86ff);
     animation: gradient 20s ease infinite;
+    background-size: 300% 300%;
 }
 .bg-about {
     background: linear-gradient(120deg, #4ade80, #15803d);
     animation: gradient 20s ease infinite;
+    background-size: 300% 300%;
 }
 .bg-projects {
     background: linear-gradient(120deg, #f87171, #b91c1c);
     animation: gradient 20s ease infinite;
+    background-size: 300% 300%;
 }
 .bg-contact {
     background: linear-gradient(120deg, #fde047, #f59e0b);
     animation: gradient 20s ease infinite;
+    background-size: 300% 300%;
 }
 
 @keyframes gradient {
@@ -226,59 +240,6 @@ h1 {
 
 }
 
-/*.container {
-  position: relative;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  padding: 2rem 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2rem;
-  max-width: 100%;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-}
-
-.container::-webkit-scrollbar {
-  display: none;
-}
-
-
-.card {
-  display: flex;
-  flex: 0 0 220px;
-  height: 280px;
-  width: 200px;
-  background-color: #17141d;
-  background: linear-gradient(
-    145deg,
-    rgba(255,255,255,0.12),
-    rgba(255,255,255,0.04)
-  );
-  background-image:
-  linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.12),
-    rgba(255,255,255,0.02)
-  );
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 10px;
-  box-shadow: -1rem 0 3rem #000;
-
-  transition:
-    transform 0.45s cubic-bezier(.2,.8,.2,1),
-    box-shadow 0.45s ease;
-  position: relative;
-  left: 0px;
-  margin: 0;
-  padding: 1.5rem;
-  color: white;
-}*/
-
 .container {
   display: grid;
   grid-auto-flow: column;
@@ -288,12 +249,14 @@ h1 {
 
   width: 100%;
   max-width: 1000px;
-  margin: 0 auto;
 
+  margin: 0 auto;
   padding: 2rem 1.5rem;
 
-  overflow-x: auto;
-  overflow-y: visible;
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+  overscroll-behavior-x: contain;
 
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
